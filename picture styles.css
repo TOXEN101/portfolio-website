@@ -1,0 +1,28 @@
+.content {
+    width: 100%;
+    margin: auto;
+    margin-top: 0.5vh;
+    background-color: #000000;
+    position: relative;
+}
+
+.work-sample-div {
+    margin: 7px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+    color: rgb(0, 0, 0);
+    font-family: "Roboto", sans-serif;
+}
+
+.work-sample-div {
+    overflow: hidden;
+}
+
+.work-sample-div>img,
+.content>video {
+    height: 99%;
+    width: 99%;
+    margin: auto;
+    overflow: hidden;
+}
