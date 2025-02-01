@@ -20,9 +20,14 @@
 }
 
 .work-sample-div>img,
-.content>video {
+.content video {
     height: 99%;
     width: 99%;
     margin: auto;
+    overflow: hidden;
+}
+
+.video-samples,
+body {
     overflow: hidden;
 }
