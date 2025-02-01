@@ -19,15 +19,9 @@
     overflow: hidden;
 }
 
-.work-sample-div>img,
-.content video {
+.work-sample-div>img {
     height: 99%;
     width: 99%;
     margin: auto;
-    overflow: hidden;
-}
-
-.video-samples,
-body {
     overflow: hidden;
 }
