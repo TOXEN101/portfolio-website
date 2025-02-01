@@ -25,3 +25,20 @@
     margin: auto;
     overflow: hidden;
 }
+
+.video-samples {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5px;
+    gap: 5px;
+
+}
+
+.video-samples video {
+    /* margin: 0px; */
+    padding: 0px;
+    height: 99%;
+    width: 99%;
+    margin: auto;
+    overflow: hidden;
+}
