@@ -29,16 +29,15 @@
 .video-samples {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 5px;
-    gap: 5px;
+    gap: 2px;
+    margin: auto;
     overflow: hidden;
+    width: 98%;
 
 }
 
 .video-samples video {
-    /* margin: 0px; */
     padding: 0px;
     height: 99%;
     width: 99%;
-    margin: auto;
 }
