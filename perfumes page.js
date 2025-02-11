@@ -16,19 +16,19 @@ const topics = {
         number: 70
     },
     cosmetics: {
-        type: "jpg",
+        type: "webp",
         number: 4
     },
     jewelrys: {
-        type: "jpg",
+        type: "webp",
         number: 9
     },
     food: {
-        type: "jpg",
+        type: "webp",
         number: 9
     },
     portraits: {
-        type: "jpg",
+        type: "webp",
         number: 18
     },
     electronics: {
@@ -36,15 +36,15 @@ const topics = {
         number: 24
     },
     logos: {
-        type: "jpg",
+        type: "webp",
         number: 3
     },
     fashion: {
-        type: "jpg",
+        type: "webp",
         number: 5
     },
     designs: {
-        type: "jpg",
+        type: "webp",
         number: 11
     },
 }
