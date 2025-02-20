@@ -51,6 +51,7 @@ body {
 .header-logo{
     display: flex;
     justify-content: space-between;
+    gap: 9px;
     /* align-items: center; */
 }
 .header-logo>img {
