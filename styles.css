@@ -48,7 +48,13 @@ body {
     margin: auto 0px;
 }
 
+.header-logo{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
 .header-logo>img {
+    
     height: 50px;
     border-radius: 50%;
 }
@@ -58,7 +64,8 @@ body {
     font-weight: 700;
     color: #ffffff;
     height: 90%;
-    margin: auto 0px;
+    margin: auto;
+    text-align: center;
 }
 
 .hamburger-menu-icon {
