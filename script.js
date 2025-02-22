@@ -37,80 +37,17 @@ transparent.addEventListener('click', () => {
     transparent.classList.remove('active')
     hamburgerMenu.classList.remove('active')
 })
-// let videoThumbs = document.querySelectorAll('.videoThumbs')
-// videoThumbs.forEach((videoThumb) => {
-//     videoThumb.addEventListener("click", () => {
-//         let videoName = videoThumb.dataset.videoName;
-//         let video = document.getElementById(`${videoName}`)
-//         video.classList.add('active')
-//         transparent.classList.add("active")
-
-//         transparent.addEventListener('click', () => {
-//             transparent.classList.remove('active')
-//             video.classList.remove('active')
-//             pauseVideo();
-//         })
-//     });
-// })
-
-// let videoThumbs = document.querySelectorAll('.videoThumbs');
-
-// videoThumbs.forEach((videoThumb) => {
-//     videoThumb.addEventListener("click", () => {
-//         let videoName = videoThumb.dataset.videoName;
-//         let video = document.getElementById(`${videoName}`);
-//         video.classList.add('active');
-//         transparent.classList.add("active");
-//         let originalSrc = video.src; // Store original src in a data attribute
-//         video.src = `${originalSrc}&autoplay=1`;
-
-
-//         // transparent.addEventListener('click', () => {
-//         //     transparent.classList.remove('active');
-//         //     video.classList.remove('active');
-//         //     pauseVideo(videoName); // Pause the video
-//         // }, { once: true }); // Ensures the event runs only once
-//         transparent.onclick = () => {
-//             transparent.classList.remove('active');
-//             video.classList.remove('active');
-//             pauseVideo(videoName); // Pause the video
-//         }; // Ensures the event runs only once
-//     });
-// });
-
-// // Function to pause the video using YouTube API
-// function pauseVideo(videoId) {
-//     let iframe = document.getElementById(videoId);
-//     iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-// }
-
 let videoThumbs = document.querySelectorAll('.videoThumbs');
-// let transparent = document.getElementById('transparent'); // Make sure this exists in your HTML
 
 videoThumbs.forEach((videoThumb) => {
     videoThumb.addEventListener("click", () => {
         let videoName = videoThumb.dataset.videoName;
-        let video = document.getElementById(videoName);
-
-        if (!video) {
-            console.error(`No iframe found with ID: ${videoName}`);
-            return;
-        }
-
-        // Hide all iframes before showing the selected one
-        document.querySelectorAll(".iframes iframe").forEach(iframe => {
-            iframe.classList.remove("active");
-        });
-
-        // Show the selected video
+        let video = document.getElementById(`${videoName}`);
         video.classList.add('active');
         transparent.classList.add("active");
-
-        // Autoplay the video
-        let originalSrc = video.dataset.src || video.src;
+        let originalSrc = video.src;
         video.src = `${originalSrc}&autoplay=1`;
 
-        // Remove any previous event listener and add a new one
         transparent.onclick = () => {
             transparent.classList.remove('active');
             video.classList.remove('active');
@@ -119,10 +56,24 @@ videoThumbs.forEach((videoThumb) => {
     });
 });
 
-// Function to pause video using YouTube API
 function pauseVideo(videoId) {
     let iframe = document.getElementById(videoId);
-    if (iframe && iframe.contentWindow) {
-        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+}
+
+const videos = document.querySelectorAll("video");
+let index = 0;
+
+function loadNextVideo() {
+    if (index < videos.length) {
+        const video = videos[index];
+        video.load(); // Load the current video
+        video.onloadeddata = () => {
+            index++;
+            loadNextVideo(); // Load the next video after the current one is ready
+        };
     }
 }
+
+// Start loading the first video
+loadNextVideo();
