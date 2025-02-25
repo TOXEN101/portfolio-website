@@ -29,7 +29,7 @@ const topics = {
     },
     portraits: {
         type: "webp",
-        number: 18
+        number: 15
     },
     electronics: {
         type: "webp",
