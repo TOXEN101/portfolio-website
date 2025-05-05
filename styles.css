@@ -62,12 +62,20 @@ body {
 }
 
 .header-name {
+    /* font-family: 'Roboto', serif; */
+    /* font-weight: 500; */
+    /* color: #ffffff; */
+    /* height: 90%; */
+    margin: auto;
+}
+.header-name>h1{
     font-family: 'Roboto', serif;
-    font-weight: 700;
+    font-weight: 500;
     color: #ffffff;
-    height: 90%;
+    font-size: small;
     margin: auto;
     text-align: center;
+    /* height: 90%; */
 }
 
 .hamburger-menu-icon {
