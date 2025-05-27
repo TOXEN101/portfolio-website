@@ -62,9 +62,9 @@ body {
 }
 
 .header-name {
-    /* font-family: 'Roboto', serif; */
+    font-family: 'Roboto', serif;
     /* font-weight: 500; */
-    /* color: #ffffff; */
+    color: #ffffff;
     /* height: 90%; */
     margin: auto;
 }
